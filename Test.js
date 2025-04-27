@@ -43,3 +43,5 @@ function transferFunds(amount) {
 
 transferFunds(500); // Simulating two transfers that could race
 transferFunds(200); // Second transfer happening too soon, causing potential issues
+
+console.log('asd');
