@@ -1,0 +1,24 @@
+// Import emailjs if using Node.js
+// import emailjs from 'emailjs-com'; // if using Node.js
+
+// Initialize
+emailjs.init('YOUR_PUBLIC_KEY'); // from your EmailJS account
+
+// Send Email
+function sendEmail() {
+  const templateParams = {
+    to_name: 'User',
+    from_name: 'My App',
+    message: 'This is a test email sent from EmailJS!',
+  };
+
+  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+      console.log('FAILED...', error);
+    });
+}
+
+// Call the function
+sendEmail();
