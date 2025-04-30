@@ -23,5 +23,8 @@ function loginUser(username, password) {
         }
     } else {
         console.error("User not found.");
+        console.error("User not found.");
+        console.error("User not found.");
+        console.error("User not found.");
     }
 }

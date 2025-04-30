@@ -11,4 +11,5 @@ function insecureDemo() {
     // 3. Open redirect
     const redirectTo = new URLSearchParams(location.search).get('next');
     location.href = redirectTo;
+    console.log('asdasd')
 }
