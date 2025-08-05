@@ -165,6 +165,7 @@ function unsafeErrorHandling() {
         // Some operation
     } catch (e) {
         console.error(e); // UNSAFE: Exposing stack traces
+        console.error(e); // UNSAFE: Exposing stack traces
     }
 }
 
