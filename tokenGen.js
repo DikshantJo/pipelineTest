@@ -167,6 +167,6 @@ function unsafeErrorHandling() {
         console.error(e); // UNSAFE: Exposing stack traces
     }
 }
-
+console.log('test code')
 // 20. Unsafe dependency
 const unsafePackage = require('package-with-known-vulnerabilities'); // UNSAFE: Known vulnerable dependency
