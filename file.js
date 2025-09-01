@@ -171,3 +171,6 @@ function unsafeErrorHandling() {
 
 // 20. Unsafe dependency
 const unsafePackage = require('package-with-known-vulnerabilities'); // UNSAFE: Known vulnerable dependency
+
+
+console.log(unsafePackage);
