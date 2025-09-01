@@ -1,0 +1,25 @@
+name: AI Code Review
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: AI Code Review
+        uses: YOUR_USERNAME/ai-code-review-action@v1.0.0
+        with:
+          target-branch: ${{ github.base_ref }}
+          severity-threshold: 'MEDIUM'
+        env:
+          OPENAI_API_KEY: ${{  github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # SMTP credentials go here in your private repo
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
