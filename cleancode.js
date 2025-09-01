@@ -8,7 +8,7 @@ function loginUser(username, password) {
         'admin': 'admin123',  // Insecure: storing plaintext passwords
         'user': 'userpass'
     };
-
+asda
     // Check if user exists
     if (userDB[username]) {
         // Compare input password with stored password
