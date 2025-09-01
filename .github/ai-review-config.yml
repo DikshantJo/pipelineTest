@@ -166,8 +166,8 @@ notifications:
     smtp_user: ${{ secrets.SMTP_USER }}
     smtp_pass: ${{ secrets.SMTP_PASS }}
     smtp_secure: ${{ secrets.SMTP_SECURE }}
-    from_email: 'ai-review@yourcompany.com'
-    to_emails: ['your-email@domain.com']
+    from_email: 'dikshant@grafterr.com'
+    to_emails: ['dikshant@grafterr.com']
   
   slack:
     enabled: false
