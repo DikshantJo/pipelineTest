@@ -12,7 +12,7 @@ function generateToken(options = {}) {
     const {
         length = 32,
         includeUppercase = true,
-        includeLowercase = true,
+        includeLowercase = true,/* sssss */
         includeNumbers = true,
         includeSpecialChars = false
     } = options;
