@@ -1,4 +1,4 @@
-/**
+asdasd/**
  * Generates a random token with specified options
  * @param {Object} options - Configuration options
  * @param {number} options.length - Length of the token (default: 32)
