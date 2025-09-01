@@ -7,6 +7,6 @@ After implementing the above changes, make sure that:
 
 You're accessing the plugin's configuration under Manage Jenkins > Configure System.
 
-The API key, email username, and password values should persist after saving.
+The API key, email username, and password values should persist after saving.ssss
 
 When you push the code (or do any operation), Jenkins should correctly reference these persisted configuration values and not overwrite or lose them.
