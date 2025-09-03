@@ -11,6 +11,19 @@ asdasdasdasdasd/**
 function generateToken(options = {}) {
     const {
         length = 32,
+        includeUppercase = true,/**
+ * Generates a random token with specified options
+ * @param {Object} options - Configuration options
+ * @param {number} options.length - Length of the token (default: 32)
+ * @param {boolean} options.includeUppercase - Include uppercase letters (default: true)
+ * @param {boolean} options.includeLowercase - Include lowercase letters (default: true)
+ * @param {boolean} options.includeNumbers - Include numbers (default: true)
+ * @param {boolean} options.includeSpecialChars - Include special characters (default: false)
+ * @returns {string} Generated random token
+ */
+function generateToken(options = {}) {
+    const {
+        length = 32,
         includeUppercase = true,
         includeLowercase = true,/* sssss */
         includeNumbers = true,asdasdasdasdasd/**
