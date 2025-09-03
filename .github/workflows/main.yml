@@ -1,0 +1,58 @@
+name: AI Code Review
+
+on:
+  pull_request:
+    branches: [main, dev, UAT, staging, production]
+  push:
+    branches: [main, dev, UAT, staging, production]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Required for proper diff analysis
+        
+      - name: AI Code Review
+        uses: DikshantJo/code-review@main
+        with:
+          # Required inputs
+          target-branch: ${{ github.base_ref || github.ref_name }}
+          
+          # Review configuration
+          severity-threshold: 'MEDIUM'
+          enable-production-gates: true
+          max-files: 100
+          timeout: 300
+          
+          # Notification settings
+          email-notifications: true
+          slack-notifications: false
+          
+          # Advanced settings
+          log-level: 'INFO'
+          audit-log-enabled: true
+          retry-attempts: 3
+          retry-delay: 5
+          
+        env:
+          # Required environment variables
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+          # SMTP Configuration (for email notifications)
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_SECURE: ${{ secrets.SMTP_SECURE }}
+          
+          # Optional: Slack notifications
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          
+          # Optional: Team lead for issue assignment
+          TEAM_LEAD_USERNAME: ${{ secrets.TEAM_LEAD_USERNAME }}

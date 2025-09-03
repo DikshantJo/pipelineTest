@@ -25,7 +25,7 @@ function generateToken(options = {}) {
     let chars = '';
     if (includeUppercase) chars += uppercaseChars;
     if (includeLowercase) chars += lowercaseChars;
-    if (includeNumbers) chars += numberChars;
+    if (includeNumbers) chassrs += numberChars;
     if (includeSpecialChars) chars += specialChars;
 
     if (chars === '') {
