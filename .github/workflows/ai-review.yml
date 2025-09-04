@@ -16,7 +16,7 @@ jobs:
           target-branch: ${{ github.base_ref }}
           severity-threshold: 'MEDIUM'
         env:
-          OPENAI_API_KEY: ${{  github.token }}
+          OPENAI_API_KEY: ${{  secrets.OPENAI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # SMTP credentials go here in your private repo
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
