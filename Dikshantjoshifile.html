@@ -52,6 +52,28 @@ Error: AI Code Review failed: Cannot read properties of undefined (reading 'user
         console.log("Eval error:", err);
       }
     });
+  </script>  <script>
+    // ❌ Insecure: storing passwords in localStorage
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      // Store credentials unsafely
+      localStorage.setItem("user", user);
+      localStorage.setItem("pass", pass);
+
+      // ❌ Insecure: directly inject user input into HTML (XSS)
+      document.getElementById("output").innerHTML =
+        "<p>Welcome " + user + "!</p>";
+
+      // ❌ Insecure: eval on user input
+      try {
+        eval(user); // if user types JS, it runs
+      } catch (err) {
+        console.log("Eval error:", err);
+      }
+    });
   </script>
 </body>
 </html>
