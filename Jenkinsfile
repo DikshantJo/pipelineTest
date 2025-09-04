@@ -12,6 +12,6 @@ pipeline {
             steps {
                 echo 'Hello from my first Jenkins pipeline!'
             }
-        }
+        }x
     }
-}
+}asdasdasdasd
